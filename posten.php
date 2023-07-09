@@ -25,6 +25,7 @@ function checkPosten($postcode) {
     curl_setopt($session, CURLOPT_URL, $start_url);
     curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($session, CURLOPT_HTTPHEADER, $headers0);
+    curl_setopt($session, CURLOPT_ENCODING , "gzip");
     $start_response = curl_exec($session);
 
     $httpCode = curl_getinfo($session, CURLINFO_HTTP_CODE);
